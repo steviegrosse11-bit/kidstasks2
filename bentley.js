@@ -11,6 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Show current total
   pointsDisplay.textContent = totalPoints;
 
+  // Custom points per task
+  const taskPoints = {
+    btask1: 1, // Make your bed
+    btask2: 2, // Brush your teeth
+    btask3: 3, // Hoover or sweep hallway/frontroom/landing and bedrooms
+    btask5: 2  // Brush your hair
+  };
+
   // Reset daily checkboxes if it's a new day
   if (savedDate !== today) {
     localStorage.setItem('bentleyDate', today);
@@ -34,7 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const alreadyScored = localStorage.getItem(box.id) === 'true';
 
       if (box.checked && !alreadyScored) {
-        totalPoints += 1;
+        const pointsForTask = taskPoints[box.id] || 1;
+        totalPoints += pointsForTask;
         localStorage.setItem('bentleyPoints', totalPoints);
         pointsDisplay.textContent = totalPoints;
       }
