@@ -15,8 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const taskPoints = {
     btask1: 1, // Make your bed
     btask2: 2, // Brush your teeth
-    btask3: 3, // Hoover or sweep hallway/frontroom/landing and bedrooms
-    btask5: 2  // Brush your hair
+    btask3: 3, // Clothes out for the next day
+    btask4: 2,  // Brush your hair
+    itaskBonus1: 4, // Whipe sides and clean the Bathroom
+    itaskBonus2: 5,  // Bring everyones washing down
+    itaskBonus3: 6  // Hoover or sweep hallway/frontroom/landing and bedrooms
   };
 
   // Reset daily checkboxes if it's a new day
@@ -44,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (box.checked && !alreadyScored) {
         const pointsForTask = taskPoints[box.id] || 1;
         totalPoints += pointsForTask;
-        localStorage.setItem('bentleyPoints', totalPoints);
+        localStorage.setItem('isabellaPoints', totalPoints);
         pointsDisplay.textContent = totalPoints;
       }
 
