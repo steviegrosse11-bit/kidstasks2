@@ -46,13 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
         totalPoints += pointsForTask;
         localStorage.setItem('bentleyPoints', totalPoints);
         pointsDisplay.textContent = totalPoints;
-
-        // 🎉 Confetti burst
-        confetti({
-          particleCount: 50,
-          spread: 70,
-          origin: { y: 0.6 }
-        });
       }
 
       localStorage.setItem(box.id, box.checked);
