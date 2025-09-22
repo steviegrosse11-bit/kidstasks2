@@ -5,37 +5,48 @@
   <title>Bentley's Jobs</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bentley">
-  <h1><u>Hi Bentley!</u> 👧</h1>
+<body class="bentley-theme">
+  <h1><u>Hi Bentley!</u> 👦</h1>
+
+  <div class="points-tally">
+    🏆 Points: <span id="pointsTotal">0</span>
+  </div>
 
   <div class="task-container">
     <div class="task-box">
-      <input type="checkbox" id="itask1">
-      <label for="itask1">🛏️ Make your bed</label>
+      <input type="checkbox" id="btask1">
+      <label for="btask1">🛏️ Make your bed</label>
     </div>
     <div class="task-box">
-      <input type="checkbox" id="itask2">
-      <label for="itask2">👗 Put away clothes</label>
+      <input type="checkbox" id="btask2">
+      <label for="btask2">🪥 Brush your teeth</label>
     </div>
     <div class="task-box">
-      <input type="checkbox" id="itask3">
-      <label for="itask3">🛌 Bed made</label>
+      <input type="checkbox" id="btask3">
+      <label for="btask3">🐶 Feed the dog</label>
     </div>
     <div class="task-box">
-      <input type="checkbox" id="itask4">
-      <label for="itask4">🪟 Curtains opened</label>
+      <input type="checkbox" id="btask4">
+      <label for="btask4">🧸 Tidy your toys</label>
     </div>
     <div class="task-box">
-      <input type="checkbox" id="itask5">
-      <label for="itask5">🪥 Teeth Brushed</label>
+      <input type="checkbox" id="btask5">
+      <label for="btask5">🪟 Open the curtains</label>
     </div>
-        <div class="task-box">
-      <input type="checkbox" id="itask6">
-      <label for="itask6">🪮 Hair Brushed</label>
+    <div class="task-box">
+      <input type="checkbox" id="btask6">
+      <label for="btask6">🪮 Brush your hair</label>
     </div>
   </div>
 
   <div id="celebration" style="display:none;">🎉 Great job Bentley! You finished everything!</div>
+
+  <button id="resetButton">🔄 Reset for Testing</button>
+<div class="spend-points">
+  <label for="spendInput">Spend points:</label>
+  <input type="number" id="spendInput" min="1" max="999">
+  <button id="spendButton">🎁 Spend</button>
+</div>
 
   <a href="index.html" class="back-btn">⬅️ Back to Home</a>
   <script src="bentley.js"></script>
