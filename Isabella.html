@@ -8,6 +8,10 @@
 <body class="isabella-theme">
   <h1><u>Hi Isabella!</u> 👧</h1>
 
+  <div class="points-tally">
+    🏆 Points: <span id="pointsTotal">0</span>
+  </div>
+
   <div class="task-container">
     <div class="task-box">
       <input type="checkbox" id="itask1">
@@ -36,6 +40,13 @@
   </div>
 
   <div id="celebration" style="display:none;">🎉 Great job Isabella! You finished everything!</div>
+
+  <button id="resetButton">🔄 Reset for Testing</button>
+<div class="spend-points">
+  <label for="spendInput">Spend points:</label>
+  <input type="number" id="spendInput" min="1" max="999">
+  <button id="spendButton">🎁 Spend</button>
+</div>
 
   <a href="index.html" class="back-btn">⬅️ Back to Home</a>
   <script src="isabella.js"></script>
