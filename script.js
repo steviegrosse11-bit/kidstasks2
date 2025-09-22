@@ -15,3 +15,16 @@ taskList.forEach((checkbox, index) => {
     localStorage.setItem(`task${index}`, checkbox.checked);
   });
 });
+document.getElementById('resetButton').addEventListener('click', () => {
+  checkboxes.forEach((box) => {
+    box.checked = false;
+    localStorage.removeItem(box.id);
+    box.parentElement.classList.remove('checked');
+  });
+
+  localStorage.removeItem('bentleyDate');
+  localStorage.removeItem('bentleyPoints');
+  totalPoints = 0;
+  pointsDisplay.textContent = totalPoints;
+  document.getElementById('celebration').style.display = 'none';
+});
