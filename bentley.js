@@ -13,13 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Custom points per task
   const taskPoints = {
-    btask1: 1, // Make your bed
-    btask2: 2, // Brush your teeth
-    btask3: 3, // Clothes out for the next day
-    btask4: 2,  // Brush your hair
-    itaskBonus1: 4, // Whipe sides and clean the Bathroom
-    itaskBonus2: 5,  // Bring everyones washing down
-    itaskBonus3: 6  // Hoover or sweep hallway/frontroom/landing and bedrooms
+    btask1: 1,
+    btask2: 2,
+    btask3: 3,
+    btask4: 2,
+    btask5: 2,
+    itaskBonus1: 4,
+    itaskBonus2: 5,
+    itaskBonus3: 6
   };
 
   // Reset daily checkboxes if it's a new day
@@ -49,6 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
         totalPoints += pointsForTask;
         localStorage.setItem('bentleyPoints', totalPoints);
         pointsDisplay.textContent = totalPoints;
+
+        // 🎉 Confetti burst
+        confetti({
+          particleCount: 50,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
       }
 
       localStorage.setItem(box.id, box.checked);
