@@ -15,6 +15,103 @@ ul {
 }
 
 li {
-  margin: 10px 0;
+margin-bottom: 1em;
+  font-size: 1.5em;
+}
+#taskList li {
+  margin-bottom: 30px;
+}
+.btn {
+  padding: 20px 40px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  font-size: 2em; /* Make it bigger */
+  font-weight: bold; /* Optional: make it bolder */
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s, background-color 0.3s;
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px; /* Adjust this to control vertical spacing */
+  margin-top: 60px;
+}
+
+.btn {
+  padding: 25px 50px;
+  font-size: 2.5em;
+  font-weight: bold;
+  border-radius: 20px;
+  background-color:#2196F3;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s, background-color 0.3s;
+  }
+.bentley {
+  background-color: #2196F3;
+}
+
+.isabella {
+  background-color: #E91E63;
+}
+
+.btn:hover {
+  background-color: #000000;
+  transform: scale(1.05);
+}
+.bentley-theme {
+  background-color: #e0f7fa;
+  color: #004d40;
+}
+
+.isabella-theme {
+  background-color: #fff0f5;
+  color: #880e4f;
+}
+
+.back-btn {
+  display: block;
+  margin: 40px auto;
+  text-align: center;
   font-size: 1.2em;
+  color: #333;
+  text-decoration: none;
+}
+.bentley-theme {
+  background-color: #35b3c4; /* Light blue */
+  color: #004d40; /* Optional: dark teal text */
+}
+.isabella-theme {
+  background-color: #ca18ad; /* Light blue */
+  color: #004d40; /* Optional: dark teal text */
+}
+.task-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.task-box {
+  width: 80%;
+  max-width: 500px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2em;
+}
+
+.task-box.checked {
+  background-color: #c8e6c9;
+  border-color: #4CAF50;
 }
