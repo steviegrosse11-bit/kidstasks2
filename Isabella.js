@@ -8,8 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedDate = localStorage.getItem('isabellaDate');
   let totalPoints = parseInt(localStorage.getItem('isabellaPoints')) || 0;
 
+  // Show current total
   pointsDisplay.textContent = totalPoints;
 
+  // Custom points per task
   const taskPoints = {
     btask1: 1,
     btask2: 2,
@@ -21,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     itaskBonus3: 6
   };
 
+  // Reset daily checkboxes if it's a new day
   if (savedDate !== today) {
     localStorage.setItem('isabellaDate', today);
     checkboxes.forEach((box) => {
@@ -30,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Load checkbox states and apply styling
   checkboxes.forEach((box) => {
     const saved = localStorage.getItem(box.id);
     box.checked = saved === 'true';
@@ -46,13 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
         totalPoints += pointsForTask;
         localStorage.setItem('isabellaPoints', totalPoints);
         pointsDisplay.textContent = totalPoints;
-
-        // 🎉 Confetti burst
-        confetti({
-          particleCount: 50,
-          spread: 70,
-          origin: { y: 0.6 }
-        });
       }
 
       localStorage.setItem(box.id, box.checked);
@@ -61,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Reset button logic
   resetButton.addEventListener('click', () => {
     checkboxes.forEach((box) => {
       box.checked = false;
@@ -75,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('celebration').style.display = 'none';
   });
 
+  // Spend points logic
   spendButton.addEventListener('click', () => {
     const spendAmount = parseInt(spendInput.value);
 
