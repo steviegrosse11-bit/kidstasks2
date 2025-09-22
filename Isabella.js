@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (box.checked && !alreadyScored) {
         const pointsForTask = taskPoints[box.id] || 1;
         totalPoints += pointsForTask;
-        localStorage.setItem('isabellaPoints', totalPoints);
+        localStorage.setItem('bentleyPoints', totalPoints);
         pointsDisplay.textContent = totalPoints;
       }
 
