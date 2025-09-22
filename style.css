@@ -167,4 +167,13 @@ margin-bottom: 1em;
   background-color: #e68900;
 }
 
+.job-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.1em;
+}
+
+.job-list li {
+  margin: 6px 0;
+}
 
