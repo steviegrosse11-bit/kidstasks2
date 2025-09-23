@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Isabella's Jobs</title>
   <link rel="stylesheet" href="style.css">
+
 </head>
 <body class="isabella-theme">
   <h1><u>Hi Isabella!</u> 👧</h1>
@@ -13,32 +14,59 @@
   </div>
 
   <div class="task-container">
-    <div class="task-box"><input type="checkbox" id="btask1"><label for="btask1">🛏️ Make your bed</label></div>
-    <div class="task-box"><input type="checkbox" id="btask2"><label for="btask2">🪥 Brush your teeth</label></div>
-    <div class="task-box"><input type="checkbox" id="btask3"><label for="btask3">👕 Clothes out for the next day</label></div>
-    <div class="task-box"><input type="checkbox" id="btask4"><label for="btask4">🪟 Open the curtains</label></div>
-    <div class="task-box"><input type="checkbox" id="btask5"><label for="btask5">🪮 Brush your hair</label></div>
+    <div class="task-box">
+      <input type="checkbox" id="btask1">
+      <label for="btask1">🛏️ Make your bed</label>
+    </div>
+<div class="task-box">
+  <input type="checkbox" id="btask2a">
+  <label for="btask2a">🪥 Brush your teeth (morning)</label>
+</div>
+<div class="task-box">
+  <input type="checkbox" id="btask2b">
+  <label for="btask2b">🪥 Brush your teeth (evening)</label>
+</div>
+       <div class="task-box">
+      <input type="checkbox" id="btask3">
+      <label for="btask3">👕 Clothes out for the next day</label>
+    </div>
+    <div class="task-box">
+      <input type="checkbox" id="btask4">
+      <label for="btask4">🪟 Open the curtains</label>
+    </div>
+    <div class="task-box">
+      <input type="checkbox" id="btask5">
+      <label for="btask5">🪮 Brush your hair</label>
+    </div>
   </div>
 
-  <h2>🌟 Bonus Jobs</h2>
-  <div class="task-container">
-    <div class="task-box"><input type="checkbox" id="itaskBonus1"><label for="itaskBonus1">🧼 Wipe sides and clean the bathroom</label></div>
-    <div class="task-box"><input type="checkbox" id="itaskBonus2"><label for="itaskBonus2">🧺 Bring everyone's washing down</label></div>
-    <div class="task-box"><input type="checkbox" id="itaskBonus3"><label for="itaskBonus3">🧹 Hoover or sweep hallway/frontroom/landing and bedrooms</label></div>
+<h2>🌟 Bonus Jobs</h2>
+<div class="task-container">
+  <div class="task-box">
+    <input type="checkbox" id="itaskBonus1">
+    <label for="itaskBonus1">🧼 Whipe sides and clean the Bathroom</label>
   </div>
+  <div class="task-box">
+    <input type="checkbox" id="itaskBonus2">
+    <label for="itaskBonus2">🧺 Bring everyones washing down</label>
+  </div>
+         <div class="task-box">
+      <input type="checkbox" id="itaskBonus3">
+      <label for="itaskBonus3">🧹 Hoover or sweep hallway/frontroom/landing and bedrooms</label>
+    </div>
+</div>
 
   <div id="celebration" style="display:none;">🎉 Great job Isabella! You finished everything!</div>
 
   <button id="resetButton">🔄 Reset for Testing</button>
-  <div class="spend-points">
-    <label for="spendInput">Spend points:</label>
-    <input type="number" id="spendInput" min="1" max="999">
-    <button id="spendButton">🎁 Spend</button>
-  </div>
+<div class="spend-points">
+  <label for="spendInput">Spend points:</label>
+  <input type="number" id="spendInput" min="1" max="999">
+  <button id="spendButton">🎁 Spend</button>
+</div>
 
   <a href="index.html" class="back-btn">⬅️ Back to Home</a>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script src="Isabella.js"></script>
 </body>
 </html>
-
