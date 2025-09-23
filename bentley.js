@@ -2,34 +2,39 @@ document.addEventListener('DOMContentLoaded', () => {
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   const pointsDisplay = document.getElementById('pointsTotal');
   const resetButton = document.getElementById('resetButton');
-  const spendButton = document.getElementById('spendButton');
-  const spendInput = document.getElementById('spendInput');
   const today = new Date().toDateString();
-  const savedDate = localStorage.getItem('bentleyDate');
-  let totalPoints = parseInt(localStorage.getItem('bentleyPoints')) || 0;
+  const savedDate = localStorage.getItem('taskDate');
+  let totalPoints = parseInt(localStorage.getItem('taskPoints')) || 0;
 
+  // Show current total
   pointsDisplay.textContent = totalPoints;
 
+  // Basic points per task (can be customized)
   const taskPoints = {
-    btask1: 1,
-    btask2: 2,
-    btask3: 3,
-    btask4: 1,
-    btask5: 2,
-    itaskBonus1: 4,
-    itaskBonus2: 5,
-    itaskBonus3: 6
+    task1: 1,
+    task2: 2,
+    task3: 3,
+    task4: 1,
+    task5: 2,
+    bonus1: 4,
+    bonus2: 5,
+    bonus3: 6
   };
 
+  // Reset daily checkboxes if it's a new day
   if (savedDate !== today) {
-    localStorage.setItem('bentleyDate', today);
+    localStorage.setItem('taskDate', today);
     checkboxes.forEach((box) => {
       localStorage.removeItem(box.id);
       box.checked = false;
       box.parentElement.classList.remove('checked');
     });
+    localStorage.setItem('taskPoints', 0);
+    totalPoints = 0;
+    pointsDisplay.textContent = totalPoints;
   }
 
+  // Load checkbox states and apply styling
   checkboxes.forEach((box) => {
     const saved = localStorage.getItem(box.id);
     box.checked = saved === 'true';
@@ -44,15 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (box.checked && !alreadyScored) {
         const pointsForTask = taskPoints[box.id] || 1;
         totalPoints += pointsForTask;
-        localStorage.setItem('bentleyPoints', totalPoints);
+        localStorage.setItem('taskPoints', totalPoints);
         pointsDisplay.textContent = totalPoints;
-
-        // 🎉 Confetti burst
-        confetti({
-          particleCount: 50,
-          spread: 70,
-          origin: { y: 0.6 }
-        });
       }
 
       localStorage.setItem(box.id, box.checked);
@@ -61,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Reset button logic
   resetButton.addEventListener('click', () => {
     checkboxes.forEach((box) => {
       box.checked = false;
@@ -68,29 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
       box.parentElement.classList.remove('checked');
     });
 
-    localStorage.removeItem('bentleyDate');
-    localStorage.removeItem('bentleyPoints');
+    localStorage.removeItem('taskDate');
+    localStorage.removeItem('taskPoints');
     totalPoints = 0;
     pointsDisplay.textContent = totalPoints;
     document.getElementById('celebration').style.display = 'none';
-  });
-
-  spendButton.addEventListener('click', () => {
-    const spendAmount = parseInt(spendInput.value);
-
-    if (isNaN(spendAmount) || spendAmount <= 0) {
-      alert("Please enter a valid number of points to spend.");
-      return;
-    }
-
-    if (totalPoints >= spendAmount) {
-      totalPoints -= spendAmount;
-      localStorage.setItem('bentleyPoints', totalPoints);
-      pointsDisplay.textContent = totalPoints;
-      spendInput.value = '';
-    } else {
-      alert("Not enough points to spend.");
-    }
   });
 
   function checkCompletion() {
